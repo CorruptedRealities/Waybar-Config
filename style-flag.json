@@ -1,0 +1,9 @@
+{
+  "modules-right": ["hyprland/language"],
+  "hyprland/language": {
+    "format": "{}",
+    "format-English (US)": "🇺🇸 EN",
+    "format-Russian": "🇷🇺 RU",
+    "on-click": "~/.config/waybar/scripts/hypr-toggle-layout.sh"
+  }
+}

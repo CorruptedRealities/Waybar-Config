@@ -1,0 +1,6 @@
+{
+  "include": "CURRENT_STYLE",
+  "layer": "top",
+  "modules-left": ["hyprland/language"],
+  ...
+}

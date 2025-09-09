@@ -1,0 +1,39 @@
+
+{
+  "layer": "top",
+  "position": "bottom",
+  "modules-left": ["workspaces"],
+  "modules-center": ["custom/player-artist","custom/cava","custom/player-song"],
+  "modules-right": ["custom/shutdown"],
+
+  "custom/player-artist": {
+    "format": "{}",
+    "exec": "playerctl metadata artist",
+    "interval": 2
+  },
+
+  "custom/cava": {
+    "format": "{}",
+    "exec": "~/.config/waybar/modules/cava.sh",
+    "return-type": "json",
+    "interval": 0,
+    "tooltip": false 
+ },	
+
+  "custom/player-song": {
+    "format": "♪ {}",
+    "exec": "playerctl metadata title",
+    "interval": 2
+  },
+
+"custom/shutdown": {
+  "format": "",
+  "on-click": "~/.config/hypr/powermenu.sh",
+  "tooltip": false
+},
+
+  "workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true
+  }
+}

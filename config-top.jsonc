@@ -1,0 +1,45 @@
+{
+  "layer": "top",
+  "position": "top",
+  "output": "eDP-1",
+  "modules-left": ["cpu", "memory", "temperature"],
+  "modules-center": ["custom/media", "custom/visualizer"],
+  "modules-right": ["battery", "pulseaudio", "clock"],
+
+  "cpu": {
+    "format": "CPU: {usage}%"
+  },
+
+  "memory": {
+    "format": "RAM: {used:0.1f}G"
+  },
+
+  "temperature": {
+    "format": " {temperatureC}°C"
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "bat": "BAT0"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-icons": {
+      "default": ["", "", ""]
+    }
+  },
+
+  "custom/media": {
+    "exec": "~/.config/waybar/scripts/nowplaying.sh",
+    "return-type": "json",
+    "interval": 2
+  },
+
+  "custom/visualizer": {
+    "exec": "bash ~/.config/waybar/scripts/cava-bar.sh",
+    "return-type": "raw",
+    "interval": "once"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "bars": [
+    {
+      "position": "top",
+      "modules-left": ["cpu", "memory", "temperature"],
+      "modules-center": ["custom/media", "custom/visualizer"],
+      "modules-right": ["battery", "pulseaudio", "clock"]
+    },
+    {
+      "position": "bottom",
+      "modules-left": ["wlr/workspaces"],
+      "modules-right": ["bluetooth", "network"]
+    }
+  ],
+
+  "cpu": {
+    "format": "CPU: {usage}%"
+  },
+  "memory": {
+    "format": "RAM: {used:0.1f}G"
+  },
+  "temperature": {
+    "format": " {temperatureC}°C"
+  },
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "bat": "BAT0"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-icons": {
+      "default": ["", "", ""]
+    }
+  },
+  "custom/media": {
+    "exec": "~/.config/waybar/scripts/nowplaying.sh",
+    "return-type": "json",
+    "interval": 2
+  },
+  "custom/visualizer": {
+    "exec": "bash ~/.config/waybar/scripts/cava-bar.sh",
+    "return-type": "raw",
+    "interval": "once"
+  },
+  "wlr/workspaces": {
+    "format": "{name}",
+    "on-click": "activate"
+  },
+  "bluetooth": {
+    "on-click": "blueman-manager"
+  },
+  "network": {
+    "interface": "wlp1s0",
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰈀  Ethernet",
+    "format-disconnected": "󰖪  Disconnected",
+    "tooltip-format": "{ipaddr}/{cidr} via {gateway} ({signalStrength}%)",
+    "on-click": "nm-connection-editor"
+  }
+}

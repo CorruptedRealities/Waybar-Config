@@ -1,0 +1,2 @@
+#!/bin/bash
+cava -p ~/.config/waybar/cava_config | jq -c '[.[] | tostring] | join("")'

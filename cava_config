@@ -1,0 +1,12 @@
+[general]
+output = raw
+bars = 30
+framerate = 30
+data_format = ascii
+
+[output]
+method = raw
+raw_target = /dev/stdout
+
+[input]
+method = pulse

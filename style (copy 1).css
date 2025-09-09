@@ -1,0 +1,162 @@
+/* Base font and global styles */
+* {
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif, JetBrainsMono Nerd Font;
+    font-size: 12px;
+}
+
+#window {
+  min-width: 100px;
+  margin: 0 10px;
+}
+
+
+window#waybar {
+    font-family: inherit;
+    font-size: inherit;
+    background: linear-gradient(90deg, #ff007f, #8e2de2);
+    border-bottom: 4px solid rgba(100, 114, 125, 0.5);
+    color: #ffffff;
+    transition: background-color 0.5s;
+}
+
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+button {
+    box-shadow: inset 0 -3px transparent;
+ border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+/* Workspaces */
+#workspaces button {
+    padding: 0 1px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+    background: linear-gradient(90deg, #ff007f, #8e2de2);
+    box-shadow: inset 0 -3px #ffffff;
+}
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#window,
+#workspaces {
+    margin: 0 1px;
+}
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/* Default modules (you can adjust individually if you prefer more control) */
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    padding: 0 5px;
+    color: #ffffff;
+    background: linear-gradient(90deg, #ff007f, #8e2de2);
+    border-radius: 4px;
+    margin: 0 0px;
+}
+
+/* Example: extra customization if needed */
+#clock {
+    font-weight: bold;
+}
+
+#bluetooth {
+  padding: 0 5px;
+  color: #ffffff;
+  background: linear-gradient(90deg, #ff007f, #8e2de2);
+  border-radius: 4px;
+  margin: 0 0px;
+  font-family: "JetBrainsMono Nerd Font";
+}
+
+
+#battery,
+#battery#bat2 {
+    padding: 3px;
+    color: white;
+    background: linear-gradient(90deg, #ff007f, #8e2de2);
+    border-radius: 4px;
+    margin: 0 3px;
+    font-weight: 600;
+}
+
+#battery.charging,
+#battery.plugged {
+    background-color: #26A65B;
+    color: white;
+}
+
+/* Custom modules with pink–purple gradients */
+#custom-player-artist,
+#custom-cava,
+#custom-player-song,
+#custom-shutdown {
+    color: white;
+    background: linear-gradient(90deg, #ff007f, #8e2de2);
+    border-radius: 4px;
+    padding: 0 3px;
+    margin: 0 0px;
+    font-weight: 600;
+}
+
+#custom-player-artist:hover,
+#custom-cava:hover,
+#custom-player-song:hover,
+#custom-shutdown:hover {
+    background: linear-gradient(90deg, #8e2de2, #ff007f);
+    transition: background 0.3s ease-in-out;
+}
+
+/* Optional animation for blinking or attention grabbing */
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
